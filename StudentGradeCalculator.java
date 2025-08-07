@@ -32,14 +32,14 @@ class Student
 
     }
 
-    public char calculateGrade()
+    public String calculateGrade()
     {
          double average = calculateAverage();
-        if(average>=90) return 'A';
-        else if(average>=75) return 'B';
-        else if(average>=60) return 'C';
-        else if(average>=50) return 'D';
-        else return 'F';
+        if(average>=90) return "O+";
+        else if(average>=75) return "A+";
+        else if(average>=60) return "A";
+        else if(average>=50) return "B";
+        else return "F";
     }
 
     public void showReport()
@@ -59,18 +59,18 @@ public class StudentGradeCalculator
     {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter Student Name: ");
+        System.out.print("Enter Student Name: ");
         String name = sc.nextLine();
 
-        System.out.println("Enter Roll Number: ");
+        System.out.print("Enter Roll Number: ");
         int rollNumber = sc.nextInt();
 
         int[] marks = new int[5];
-        System.out.println("Enter marks for 5 Subjects: ");
+        System.out.print("Enter marks for 5 Subjects: ");
 
         for(int i=0;i<5;i++)
         {
-            System.out.println("Subject "+ (i+1) + ": " );
+            System.out.print("Subject "+ (i+1) + ": " );
             marks[i] = sc.nextInt();
         }
 
@@ -81,3 +81,18 @@ public class StudentGradeCalculator
 
     }
 }
+/*
+Enter Student Name: Aishu
+Enter Roll Number: 60
+Enter marks for 5 Subjects: Subject 1: 96
+Subject 2: 97
+Subject 3: 98
+Subject 4: 99
+Subject 5: 100
+--------STUDENT REPORT----------
+Name       :Aishu
+Roll Number:60
+Total      :490
+Average    :98.0
+Grade      :O+
+*/
